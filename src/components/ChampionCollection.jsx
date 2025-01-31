@@ -1,7 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, } from "react";
 import Champion from "./childComponents/Champion.jsx";
+import {Link, } from "react-router";
 
 function ChampionCollection({champions, setChampions}) {
+
     useEffect(() => {
         async function fetchChampions() {
             try {
@@ -15,12 +17,13 @@ function ChampionCollection({champions, setChampions}) {
                 console.log(data)
                 setChampions(data.items)
             } catch (error) {
-                console.error("Error in fetching Champions", error())
+                console.error("Error in fetching Champions", error)
             }
         }
 
         fetchChampions();
     }, []);
+
 
 
     return (
@@ -30,7 +33,7 @@ function ChampionCollection({champions, setChampions}) {
                     < Champion champion={champion}/>
                 </article>
             )}
-
+<Link to={'/champion/create'}>Create Champion</Link>
         </div>
 
     )
