@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {useNavigate, useParams} from "react-router";
+import {Link, useNavigate, useParams} from "react-router";
 import DetailChampion from "./childComponents/DetailChampion.jsx";
 
 function ChampionDetail() {
@@ -46,6 +46,7 @@ function ChampionDetail() {
     return (
         <div>
             <DetailChampion champion={champion}/>
+            <Link to={`/champion/${champion.id}/edit`}>Edit details</Link>
             <button onClick={deleteFetch}>Delete {champion.name}</button>
         </div>
 

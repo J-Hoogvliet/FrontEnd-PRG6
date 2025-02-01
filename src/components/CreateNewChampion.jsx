@@ -49,7 +49,6 @@
             event.preventDefault()
             addChampion(championData)
             navigate(`/champions`)
-
         }
 
         return (
